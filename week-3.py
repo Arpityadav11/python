@@ -114,3 +114,11 @@ A function in which another function se sent as an arguments below is the given 
 #     new.append(b)
 #     new.append(c)
 # print(new)
+
+'function to reverse a string without using slicing'
+def reverse(s):
+    new = ''
+    for i in range(len(s)-1,-1,-1): # for i in s:
+        new += s[i]                 #   new=i+new
+    return new
+print(reverse('arpit'))
