@@ -116,9 +116,57 @@ A function in which another function se sent as an arguments below is the given 
 # print(new)
 
 'function to reverse a string without using slicing'
-def reverse(s):
-    new = ''
-    for i in range(len(s)-1,-1,-1): # for i in s:
-        new += s[i]                 #   new=i+new
-    return new
-print(reverse('arpit'))
+# def reverse(s):
+#     new = ''
+#     for i in range(len(s)-1,-1,-1): # for i in s:
+#         new += s[i]                 #   new=i+new
+#     return new
+# print(reverse('arpit'))
+
+'OR'
+
+# def reverse(s):
+#     new = ''
+#     for i in reversed(s): 
+#         new += i                 
+#     return new
+# print(reverse('arpit'))
+
+'''
+                                                                Recursion
+When a function call itself again and again then it is a Recursive function.
+The recursive function can be stopped using the base case.
+'''
+# def f1():
+#     print('hello')
+#     return f1()
+# f1()
+
+'print number from 10 to 1 using recursion'
+# def count(n=10):
+
+'sum of the numbers'
+# def sum(n=10):
+#     if n<=0:
+#         return 0
+#     else:
+#         return n+sum(n-1)
+# print(sum())
+
+'factorial of a number'
+# def factorial(n):
+#     if n>1:
+#         return n * factorial(n-1)
+#     else:
+#         return 1
+# print(factorial(5))
+
+'reverse a string'
+def reverse(s,i=0,new = ''):
+    if i==len(s):
+        return new
+    else:
+        new = s[i] + new
+        return reverse(s,i+1,new)
+
+print(reverse('lucky'))
