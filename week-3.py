@@ -48,7 +48,7 @@ before the python version 3.7 dictionary was unordered and after the version 3.7
 # print(data)
 
 """
-                                            SET
+                                                               SET
 if we want to create a empty set we can use the set keyword : a= set() and we can also create a set including the values in it : a = {1,2,3,}
 we can use add method if we want to insert a value in it and that method is a.add(# value)
 """
@@ -162,11 +162,11 @@ The recursive function can be stopped using the base case.
 # print(factorial(5))
 
 'reverse a string'
-def reverse(s,i=0,new = ''):
-    if i==len(s):
-        return new
-    else:
-        new = s[i] + new
-        return reverse(s,i+1,new)
+# def reverse(s,i=0,new = ''):
+#     if i==len(s):
+#         return new
+#     else:
+#         new = s[i] + new
+#         return reverse(s,i+1,new)
 
-print(reverse('lucky'))
+# print(reverse('lucky'))
