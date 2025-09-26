@@ -170,3 +170,41 @@ The recursive function can be stopped using the base case.
 #         return reverse(s,i+1,new)
 
 # print(reverse('lucky'))
+
+''' 
+                                                            keyword argument
+this is done using the double astric i.e. ** and the arguments are stored in the key value pairs. The data is stored in dictionary.
+'''
+# def k1(**kw):
+#     print(kw)
+
+# k1(a=1,b=2,c=3)
+
+'Q.1 '
+# def k1 (**kwargs):
+#     return kwargs['a']
+# print(k1(b=10,a=9))
+
+"""
+                                                            nested function
+Function is written inside of a function
+If there are two given function and if we are writing a nested function then we can return the whole function that is written inside.
+"""
+
+"""
+                                                            Nested recursive function
+printing the nested for loop
+"""
+# def f2(b):
+#     def f1(a):
+#         if a == 11:
+#             return f2(b+1)
+#         print(a,end=' ')
+#         return f1(a+1)
+#     if b<=10:
+#         print()
+#         return f1(1)
+#     else:
+#         return 1
+# f2(1)
+
