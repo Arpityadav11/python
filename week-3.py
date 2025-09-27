@@ -208,3 +208,60 @@ printing the nested for loop
 #         return 1
 # f2(1)
 
+"""atm simulation"""
+# from tkinter import messagebox
+# def atm():
+#     global balance
+#     global pin
+#     pin=123
+#     balance=100000
+# atm()
+# def deposit(amount):
+#     global balance
+#     balance+=amount
+# def check_balance():
+#     print(balance)
+# def withdraw(amount):
+#     global balance
+#     auth_pin=int(input("enter the pin : "))
+#     if amount <= balance and pin==auth_pin:
+#         balance-=amount
+#         messagebox.showinfo("success","paisa gaya ...")
+#     elif amount >balance:
+#         messagebox.showinfo("failure","aukat m ")
+#     else:
+#         messagebox.showinfo("failure","wrong pin")
+
+# def change_pin(old_pin_input, new_pin_input):
+#     global pin
+#     if old_pin_input == pin:
+#         pin = new_pin_input
+#         print("PIN changed successfully.")
+#     else:
+#         print("Incorrect old PIN. Try again.")
+# def main():
+#     while True:
+#         print("""
+#     press 1 for deposit
+#     press 2 for check_balance
+#     press 3 for withdraw
+#     press 4 for change_pin
+#     press 0 for exit
+#             """)
+#         decison=int(input("enter : "))
+#         if decison==1:
+#             amount=int(input("enter the amount to deposit : "))
+#             deposit(amount)
+#         elif decison==2:
+#             check_balance()
+#         elif decison==3:
+#             amount=int(input("enter the amount to withdraw : "))
+#             withdraw(amount)
+#         elif decison==4:
+#             new_pin=int(input("enter new pin"))
+#             old_pin= int(input("enter old pin"))
+#             change_pin(new_pin)
+#         if decison ==0:
+#             break
+# main()
+
