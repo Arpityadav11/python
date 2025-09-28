@@ -265,3 +265,72 @@ printing the nested for loop
 #             break
 # main()
 
+'''Login using the otp which is sent to the email'''
+# import smtplib, random, ssl
+# def sendMail(mail):
+#     app_pass = 'focc iyky xtpp jrxs'  
+#     email = mail 
+#     global otp 
+#     otp = random.randint(100000, 999999)
+#     body = f'The OTP for login is {otp}'
+
+#     subject = "Your Login OTP"
+#     message = f"Subject: {subject}\n\n{body}"
+
+#     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+#         server.login(email, app_pass)
+#         server.sendmail(email, email, message)
+
+#     print(f"OTP sent to {email}: {otp}")
+
+# def login(email,password,uotp):
+#     username = email
+#     password = password
+#     uotp = otp 
+#     if uotp == otp:
+#         print('login success')
+#     else:
+#         print('wrong otp')
+
+# login()
+
+'''
+                                        Module
+Module is a python file where we can have functions variables and classes
+
+-> Types of modules 
+1. Predefined module
+2. User build modules
+
+-> Needs of module 
+1. To increase code reusability 
+2. To connect different files with each other
+
+                                *Creating our own module*
+we have to create a another file named mymodule, there are to ways to call the modules 
+1. import module_name
+import mymodule
+mymodule.Print()
+
+2. from module_name import var_name or fn_name
+from mymodule import Print
+Print()
+
+3. from module import variable, functions, classname
+4. from module import *
+
+if we are using the from method it will take the latest value
+'''
+
+'''Gretest common divisor'''
+# import math
+# def hcf(num1,num2):
+#     div = min(num1,num2)
+#     gd = 1
+#     for i in range(1,div+1):
+#         if num1%i==0 and num2%i == 0:
+#             gd=i
+#     print(gd)
+# hcf(90,5)
+
+''' sys module '''
