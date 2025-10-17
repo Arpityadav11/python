@@ -158,65 +158,65 @@
 
 
 
-import tkinter as tk 
-from tkinter import messagebox
+# import tkinter as tk 
+# from tkinter import messagebox
 
-window = tk.Tk()
-window.geometry("1500x600")
-window.config(background='#1C2833')
+# window = tk.Tk()
+# window.geometry("1500x600")
+# window.config(background='#1C2833')
 
-# Label
-label1 = tk.Label(window, text="This Is My First App", font=('Arial', 25, 'bold'), bg='hotpink')
-label1.place(x=500, y=150)
+# # Label
+# label1 = tk.Label(window, text="This Is My First App", font=('Arial', 25, 'bold'), bg='hotpink')
+# label1.place(x=500, y=150)
 
-# calculator 
-entry1=tk.Entry(window,font=('BOLD',25),bg='yellow')
-entry1.place(x=500,y=200)
-entry2=tk.Entry(window,font=('BOLD',25),bg='yellow')
-entry2.place(x=500,y=300)
+# # calculator 
+# entry1=tk.Entry(window,font=('BOLD',25),bg='yellow')
+# entry1.place(x=500,y=200)
+# entry2=tk.Entry(window,font=('BOLD',25),bg='yellow')
+# entry2.place(x=500,y=300)
 
-# Radio button
-def display_radio():
-    print(var.get())
+# # Radio button
+# def display_radio():
+#     print(var.get())
 
-var = tk.StringVar()
-radio1 = tk.Radiobutton(window, text='Male', variable=var, value='Male', font=('BOLD',25), bg='skyblue', command=display_radio)
-radio1.place(x=100, y=200)
+# var = tk.StringVar()
+# radio1 = tk.Radiobutton(window, text='Male', variable=var, value='Male', font=('BOLD',25), bg='skyblue', command=display_radio)
+# radio1.place(x=100, y=200)
 
-radio2 = tk.Radiobutton(window, text='Female', variable=var, value='Female', font=('BOLD',25), bg='skyblue', command=display_radio)
-radio2.place(x=100, y=300)
+# radio2 = tk.Radiobutton(window, text='Female', variable=var, value='Female', font=('BOLD',25), bg='skyblue', command=display_radio)
+# radio2.place(x=100, y=300)
 
 
-# button
-def action1():
-    n1=int(entry1.get())
-    n2=int(entry2.get())
-    result=n1+n2
-    label3=tk.Label(text=f'your result is : {result}',font = ('BOLD',25),fg='BLUE')
-    label3.place(x=500,y=400)
+# # button
+# def action1():
+#     n1=int(entry1.get())
+#     n2=int(entry2.get())
+#     result=n1+n2
+#     label3=tk.Label(text=f'your result is : {result}',font = ('BOLD',25),fg='BLUE')
+#     label3.place(x=500,y=400)
     
-    messagebox.showinfo("Success","Calculated",)
-button = tk.Button(window, text='Calculated', font=('BOLD',25),bg='lightgreen',command=action1)
-button.place(x=700, y=500)
+#     messagebox.showinfo("Success","Calculated",)
+# button = tk.Button(window, text='Calculated', font=('BOLD',25),bg='lightgreen',command=action1)
+# button.place(x=700, y=500)
 
-#Check box
-def display():
-    print(option1.get())
-    print(option2.get())
+# #Check box
+# def display():
+#     print(option1.get())
+#     print(option2.get())
 
-option1=tk.BooleanVar()
-option2=tk.BooleanVar()
+# option1=tk.BooleanVar()
+# option2=tk.BooleanVar()
 
-check1=tk.Checkbutton(window, text='CSE',variable=option1, onvalue='True', font=('BOLD',25),bg='lightgreen',command=display)
-check1.pack()
-check2 = tk.Checkbutton(window, text='ECE',variable=option2, offvalue='False', font=('BOLD',25),bg='lightgreen',command=display)
-check2.pack()
+# check1=tk.Checkbutton(window, text='CSE',variable=option1, onvalue='True', font=('BOLD',25),bg='lightgreen',command=display)
+# check1.pack()
+# check2 = tk.Checkbutton(window, text='ECE',variable=option2, offvalue='False', font=('BOLD',25),bg='lightgreen',command=display)
+# check2.pack()
 
-button.place(x=700,y=500)
-check1.place(x=100,y=400)
-check2.place(x=100,y=500)
+# button.place(x=700,y=500)
+# check1.place(x=100,y=400)
+# check2.place(x=100,y=500)
 
-window.mainloop()
+# window.mainloop()
 
 
 "This is the final code for the starday"
@@ -280,3 +280,12 @@ window.mainloop()
 # check2.place(x=300, y=400)
 
 # window.mainloop()
+
+''' 
+Whenever we are creating a button, we have to pass an attribute named as 'command' for 
+the working of any button 
+ex :- button = tk.Button(window,command = display{it is a function to print the entry})
+
+pack is used to center the letters we want to display also the letters don't replace the other one,
+like in place but in takes the upcoming letter or word below that one
+'''
