@@ -164,7 +164,7 @@ cursor.execute("CREATE TABLE users (id INTEGER, name TEXT)"
 #     # window.destroy()
     
 
-# window 1
+# # window 1
 # Label1 = tk.Label(window,text="please enter the user id",font=('Times New Roman','25','bold'),bg='#E6E6FA')
 # Label1.place(x=500,y=150)
 # entry1 = tk.Entry(window, font=('Times New Roman',25,'bold'), bg='#E6E6FA')
@@ -205,3 +205,93 @@ for i in str:
         count+=1
 print(count)
 '''
+
+''' 
+This tkinter file can be converted using the pyinstaller,
+which is used to convert the file intoo the executable file.
+firstly check if the pyinstaller is installed or not 
+if it is then you have to open the file 
+pyinstaller --onefile filename.py
+'''
+
+'''
+                                           *** File Handling in Python ***
+
+Python provides two ways to handle files:
+1. `open()` method
+2. `with open()` context manager
+
+📌 Syntax:
+varname = open('filename.extension', 'mode')
+
+📌 Modes:
+1. 'w' → Write (overwrites content)
+2. 'a' → Append (adds to existing content)
+3. 'r' → Read
+
+🛠️ Note:
+- Use `write()` for both 'w' and 'a' modes.
+- When using `open()`, always close the file using `varname.close()`.
+- To delete a file, refer to the code shown below.
+
+'''
+# write
+# f = open('demofile.text','w')
+# f.write("hello world")
+# f.close()
+
+# append 
+# f = open('demofile.text','a')
+# f.write("hello world")
+# f.close()
+
+# read all
+# f = open('demofile.text','r')
+# a = f.read()
+# print(a)
+# f.close()
+
+# read by line
+# f = open('demofile.text','r')
+# for i in f:
+#     print(i)
+# f.close()
+
+# to delete the file
+# import os 
+# os.remove('demofile.text')
+
+'with open'
+# with open('demofile.txt','r') as f:
+#     for i in f:
+#         print(i)
+
+# with open('demofile.txt','a') as f:
+#     f.write('this is the third line')
+
+# with open('demofile.txt','w') as f:
+#     f.write('the file got overwritten')
+
+'''
+                            *** seek() and tell() in File Handling ***
+
+🔹 seek(offset)  
+Used to move the file pointer to a specific position (in bytes) from the beginning of the file.
+
+🔹 tell()  
+Returns the current position of the file pointer (in bytes).
+
+🧠 Example:
+# f.seek(0) → moves pointer to the beginning
+# f.tell() → returns current pointer position
+
+'''
+# f = open('demofile.txt','r')
+# f.seek(7)
+# a = f.read(6)
+# print(f.tell())
+# print(a)
+# f.close()
+
+''' in the exception handling the finally block is used for the program which you want to execute always'''
+
