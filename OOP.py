@@ -1,5 +1,5 @@
 '''
-                                                *** Object-Oriented Programming (OOP) ***
+                                        *** Object-Oriented Programming (OOP) ***
 
 🔹 Definition:
 Object-Oriented Programming is a method of solving real-world problems using **classes** and **objects**.
@@ -83,28 +83,28 @@ create a class with the three attributes and two methods then create two differe
 class show how the attribute change with respect to the object and class
 '''
 
-class pubg:
-    lobby = 100
-    remaining = 4
-    finished = lobby-remaining
-    def winner(self):
-        print('winner winner chicken dinner')
-    def lose(self):
-        print('better luck next time')
+# class pubg:
+#     lobby = 100
+#     remaining = 4
+#     finished = lobby-remaining
+#     def winner(self):
+#         print('winner winner chicken dinner')
+#     def lose(self):
+#         print('better luck next time')
 
-p1 = pubg()
-p1.remaining = 45
-print(p1.lobby)
-p1.lose()
+# p1 = pubg()
+# p1.remaining = 45
+# print(p1.lobby)
+# p1.lose()
 
-# custom 
-pubg.lobby = 64
-pubg.finished = 50
-p2 = pubg()
-p2.remaining = 2
-print(p2.finished)
+# # custom 
+# pubg.lobby = 64
+# pubg.finished = 50
+# p2 = pubg()
+# p2.remaining = 2
+# print(p2.finished)
 
-p2.winner()
+# p2.winner()
 
 '''
                         *** Class Variables in OOP ***
@@ -119,7 +119,7 @@ They hold the same value for every object unless modified at the class level.
 - Stored at the class level, not per object.
 - Accessible via both `ClassName.variable` and `object.variable`.
 - Ideal for values that should be consistent across all objects (e.g., counters, configuration flags).
-
+ 
 ---
 
 🔹 Ways to Declare Class Variables:
@@ -135,4 +135,24 @@ They hold the same value for every object unless modified at the class level.
         
 3.Outside the class using the class name
     My Class.count = 20
+'''
+
+'''
+Word pattern leetcode problem
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        words = s.split()
+        if len(words) != len(pattern):
+            return False
+
+        temp = []
+        for i in pattern:
+            temp.append(pattern.find(i))
+
+        ref = []
+        for i in words:
+            ref.append(words.index(i))
+
+        return temp == ref
+
 '''
