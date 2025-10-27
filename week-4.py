@@ -294,4 +294,3 @@ Returns the current position of the file pointer (in bytes).
 # f.close()
 
 ''' in the exception handling the finally block is used for the program which you want to execute always'''
-

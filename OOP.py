@@ -60,7 +60,20 @@ Then `obj2.color` remains unchanged unless explicitly modified.
 Each object has its **own copy** of the class attributes (unless they are class-level/static variables).  
 This ensures **object independence** in behavior and state.
 
+                    *** Class Attributes and Methods in OOP ***
 
+🔹 Attributes:
+- Attributes store data or state related to a class or object.
+- They can be modified by either the class itself or its objects.
+- Typically represent **static information** (e.g., name, age, color).
+
+🔹 Methods:
+- Methods define actions or behaviors associated with a class.
+- They operate on attributes and perform tasks (e.g., display info, update values).
+
+🧠 Summary:
+- **Attributes** = Data (variables)
+- **Methods** = Actions (functions)
  
 '''
 
@@ -154,5 +167,4 @@ class Solution:
             ref.append(words.index(i))
 
         return temp == ref
-
 '''
