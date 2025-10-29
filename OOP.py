@@ -537,24 +537,24 @@ Write a decorator to count the recursion call apply this decorator on the factor
 here we have to use the 'nonlocal' keyword which is used to identify or tell that the variable we are using
 is no local. Non local is used only when you are using the nested functions.
 '''
-count = 0
+# count = 0
 
-def counter(fun):
-    def wrapper(b, fact=1):
-        global count
-        count += 1
-        return fun(b, fact)
-    return wrapper
+# def counter(fun):
+#     def wrapper(b, fact=1):
+#         global count
+#         count += 1
+#         return fun(b, fact)
+#     return wrapper
         
-@counter
-def factorial(a,fact=1):
-    fact *=a
-    if a==1:
-        return fact
-    else:
-        return factorial(a-1,fact)
-print(factorial(5))
-print(count)
+# @counter
+# def factorial(a,fact=1):
+#     fact *=a
+#     if a==1:
+#         return fact
+#     else:
+#         return factorial(a-1,fact)
+# print(factorial(5))
+# print(count)
 '''
     Using destructor inside the method
 '''
@@ -747,35 +747,142 @@ Welcome to the Valorant division!
 
 
 '''Q. develop a inventory management system using oop concept'''
-class Inventory:
-    def __init__(self):
-        self.num_of_products = 0
-        self.price = 100  # Selling price per item
-        self.cost = 70    # Purchase cost per item
-        self.revenue = 0
-        self.investment = 0
+# class Inventory:
+#     def __init__(self):
+#         self.num_of_products = 0
+#         self.price = 100  
+#         self.cost = 70    
+#         self.amount = 0
+#         self.investment = 0
 
-    def purchase_item(self, num):
-        self.num_of_products += num
-        self.investment += num * self.cost
-        print(f"Purchased {num} items. Investment: ₹{self.investment}")
+#     def purchase_item(self, num):
+#         self.num_of_products += num
+#         self.investment += num * self.cost
+#         print(f"Purchased {num} items. Investment: ₹{self.investment}")
 
-    def sell_item(self, num):
-        if num <= self.num_of_products:
-            self.num_of_products -= num
-            self.revenue += num * self.price
-            print(f"Sold {num} items. Revenue: ₹{self.revenue}")
-        else:
-            print("Not enough stock to sell.")
+#     def sell_item(self, num):
+#         if num <= self.num_of_products:
+#             self.num_of_products -= num
+#             self.amount += num * self.price
+#             print(f"Sold {num} items. amount: ₹{self.amount}")
+#         else:
+#             print("Not enough stock to sell.")
 
-    def show_status(self):
-        print(f"Products in stock: {self.num_of_products}")
-        print(f"Total investment: ₹{self.investment}")
-        print(f"Total revenue: ₹{self.revenue}")
-        print(f"Profit: ₹{self.revenue - self.investment}")
+#     def show_status(self):
+#         print(f"Products in stock: {self.num_of_products}")
+#         print(f"Total investment: ₹{self.investment}")
+#         print(f"Total amount: ₹{self.amount}")
+#         print(f"Profit: ₹{self.amount - self.investment}")
 
-store = Inventory()
-store.purchase_item(10)
-store.sell_item(5)
-store.show_status()
+# store = Inventory()
+# store.purchase_item(25)
+# store.sell_item(80)
+# store.show_status()
 
+'''
+attr - product_name,quantity,price,amount
+mthd - sell , buy, update, display product list
+'''
+
+# class ims:
+#     # constructor
+#     def __init__(self):
+#         self.product_name=[]
+#         self.quantity=[]
+#         self.data={}
+#         self.price=[]
+#         self.SP=[]
+#         self.investment = []
+#         self.profit=[]
+#         self.amount=[]
+    
+#     # to purchase the items or add product to the inventory
+    
+#     def add(self,p_name,p_quantity,pc_price):
+#         self.product_name.append(p_name)
+#         self.quantity.append(p_quantity)
+#         self.price.append(pc_price)
+#         self.SP.append((pc_price*0.2)+pc_price)
+#         self.investment.append(pc_price*p_quantity)
+#         self.profit.append(0)
+#         self.amount.append(0)
+#         for i in range(len(self.product_name)):
+#             self.data[self.product_name[i]] = {'quantity':self.quantity[i],'cost':self.price[i],'investment':self.investment[i],'SP':self.SP[i],'amount':self.amount[i],'profit':self.profit[i]}       
+    
+#     # used to update the inventory data
+    
+#     def update(self,p_name):
+#         if self.data.get(p_name) == None:
+#             print('the product doesnt exist')
+#         else:
+#             p_quantity=int(input("enter the quantity : "))
+#             p_cost = int(input("enter the cost of product : "))
+#             self.value = self.data.get(p_name)
+#             self.value['quantity']=p_quantity
+#             self.value['cost']=p_cost
+#             self.value['investment']=self.value['cost']*self.value['quantity']
+         
+#     # selling the products
+    
+#     def sell(self,p_name):
+#                 if self.data.get(p_name) == 'None':
+#                     print('the product doesnt exist')
+#                 else:
+#                     p_quantity=int(input("enter the quantity : "))
+#                     self.value = self.data.get(p_name)
+#                     if self.value['quantity']>=p_quantity:
+#                         self.value['quantity']-=p_quantity
+#                         self.value['amount']=self.value['SP']*p_quantity
+#                         self.value['profit']=self.value['amount']-self.value['investment']
+#                     else:
+#                         print('insufficient stock')
+    
+#     # display the records of the inventory
+    
+#     def display_record(self):
+#         self.revenue = 0
+#         self.netInvestment=0
+#         self.netProfit = 0
+#         print(self.data)
+#         for i in self.product_name:
+#             self.val = self.data.get(i)
+#             self.revenue += self.val['amount']
+#             self.netInvestment += self.val['investment']
+#         self.netProfit = self.revenue - self.netInvestment
+#         print(f'the net revenue of the session is: {self.revenue}')
+#         print(f'the net investment of the session is: {self.netInvestment}')
+#         print(f'the net profit of the session is: {self.netProfit}')
+
+# mahindra_service=ims()
+# while True:
+#     choice = input('''enter what you want
+#                    press 1 if you want to buy item
+#                    press 2 if you want to update the purchase
+#                    press 3 if you want to sell item 
+#                    press other key to exit''')
+    
+#     if choice=='1':
+#         product=input("enter the product name :  ")
+#         quantity=int(input("enter the quantity : "))
+#         cost = float(input("enter the cost of product : "))
+#         mahindra_service.add(product,quantity,cost)
+        
+#     elif choice=='2':
+#         product=input("enter the product name :  ")
+#         mahindra_service.update(product)
+        
+#     elif choice=='3':
+#         product=input("enter the product name :  ")
+#         mahindra_service.sell(product)
+        
+#     else:
+#         break
+        
+# mahindra_service.display_record()
+
+def f(x, y=[]): #kyunki jo list h vo mutable h toh address same rhega uska 
+                # so output k time list jo h vo as it is jayegi function k pas
+   y.append(x) 
+   return y
+print(f(1))
+print(f(2))
