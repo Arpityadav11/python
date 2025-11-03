@@ -689,10 +689,11 @@ class D(B, C):  # Multiple inheritance
 '''
 
 '''
-# 🧠 `super()` Function in Python
+# 🧠 `super()` Class in Python
 
 ## 📘 Theory
-The `super()` function in Python is used to refer to the **parent class** from within a **child class**, especially when dealing with **inheritance**. It allows you to call methods (including constructors) from the parent class without explicitly naming it.
+The `super()` class in Python is used to refer to the **parent class** from within a **child class**, especially when dealing with **inheritance**. 
+It allows you to call methods (including constructors) from the parent class without explicitly naming it.
 
 This is particularly useful when:
 - You override a method in the child class but still want to use the parent’s version.
@@ -880,9 +881,354 @@ mthd - sell , buy, update, display product list
         
 # mahindra_service.display_record()
 
-def f(x, y=[]): #kyunki jo list h vo mutable h toh address same rhega uska 
-                # so output k time list jo h vo as it is jayegi function k pas
-   y.append(x) 
-   return y
-print(f(1))
-print(f(2))
+# def f(x, y=[]): #kyunki jo list h vo mutable h toh address same rhega uska 
+#                 # so output k time list jo h vo as it is jayegi function k pas
+#    y.append(x) 
+#    return y
+# print(f(1))
+# print(f(2))
+
+'''constructor in inheritance'''
+# class c1:
+#     age = 90
+#     def __init__(self):
+#         print('i am c1 constructor')
+# class c2(c1):
+#     def __init__(self):
+#         print('i am c2 constructor ')
+#         super().__init__() # this is calling the constructor of parent class
+        
+'''
+# 🧠 Encapsulation in Python
+
+## 📘 Theory
+Encapsulation is an **object-oriented programming (OOP)** concept that focuses on **restricting direct access to data** 
+and exposing it only through controlled interfaces (methods). 
+In Python, this is typically done by making attributes **private** using double underscores (`__`).
+
+This helps:
+- Protect sensitive data from being modified accidentally
+- Enforce rules or validation before accessing/modifying data
+- Maintain clean and secure class design
+
+**Key idea**: You hide internal details and expose only what's necessary — like giving permission through methods.
+
+---
+
+## 🧪 Code Example
+
+```python
+class Player:
+    def __init__(self, name, score):
+        self.__name = name        # private attribute
+        self.__score = score      # private attribute
+
+    def get_score(self):          # public method to access score
+        return self.__score
+
+    def set_score(self, new_score):  # controlled way to update score
+        if new_score >= 0:
+            self.__score = new_score
+        else:
+            print("Invalid score!")
+
+player = Player("Arpit", 100)
+
+# Direct access fails
+print(player.__score)  # AttributeError
+
+# Access via method
+print(player.get_score())  # ✅ 100
+
+# Update via method
+player.set_score(150)
+print(player.get_score())  # ✅ 150
+
+# 🧠 Types of Encapsulation in Python
+
+## 📘 Theory
+
+Encapsulation can be categorized into two types based on how strictly access to internal data is controlled:
+
+### 1. ✅ Partial Encapsulation
+- Implemented using a **single underscore (`_`)** before an attribute or method.
+- This is a **developer-level convention** indicating that the member is intended for internal use.
+- The **Python interpreter does not enforce access restrictions** — the attribute is still accessible from outside the class.
+- Used when you want to signal "protected" access but allow flexibility.
+
+```python
+class Game:
+    def __init__(self):
+        self._rank = "Diamond"  # partial encapsulation
+
+game = Game()
+print(game._rank)  # ✅ Accessible, but discouraged
+```
+
+### 2. 🔒 Full Encapsulation
+- Implemented using a **double underscore (`__`)** before an attribute or method.
+- The **Python interpreter enforces access restrictions** through **name mangling**.
+- The attribute cannot be accessed directly using `object.__attribute` — it must be accessed via class methods.
+
+```python
+class Player:
+    def __init__(self):
+        self.__score = 100  # full encapsulation
+
+    def get_score(self):
+        return self.__score
+
+player = Player()
+print(player.get_score())  # ✅ Allowed
+print(player.__score)      # ❌ AttributeError
+```
+
+---
+
+## 🎯 Common Interview Questions
+- What is the difference between partial and full encapsulation in Python?
+- How does the Python interpreter treat `_attribute` vs `__attribute`?
+- What is name mangling and how does it relate to full encapsulation?
+- Why might a developer choose partial encapsulation over full?
+-How does partial encapsulation differ from full encapsulation?
+
+- Why might you choose partial encapsulation in a real-world system?
+
+- How does full encapsulation improve data security?
+
+- Can you give an example of a fully encapsulated class?
+```
+
+# 🧠 Getter and Setter Methods in Encapsulation
+
+## 📘 Theory
+
+In encapsulation, **getter and setter methods** are used to **access and modify private attributes** of a class. 
+Since private attributes (defined with `__`) cannot be accessed directly, these methods act as **controlled interfaces**.
+
+- **Getter**: Retrieves the value of a private attribute.
+- **Setter**: Updates the value of a private attribute, often with validation logic.
+
+This ensures:
+- Data protection
+- Controlled access
+- Validation before modification
+
+---
+
+## 🧪 Code Example
+
+```python
+class Player:
+    def __init__(self):
+        self.__score = 0  # private attribute
+
+    # Getter method
+    def get_score(self):
+        return self.__score
+
+    # Setter method
+    def set_score(self, value):
+        if value >= 0:
+            self.__score = value
+        else:
+            print("Invalid score!")
+
+player = Player()
+
+# Accessing private attribute via getter
+print(player.get_score())  # ✅ 0
+
+# Modifying private attribute via setter
+player.set_score(100)
+print(player.get_score())  # ✅ 100
+
+# Trying to set invalid value
+player.set_score(-50)      # ❌ Invalid score!
+```
+
+---
+
+## 🎯 Common Interview Questions
+- What are getter and setter methods in Python?
+- Why are getter and setter methods used in encapsulation?
+- Can you access private attributes without getters/setters?
+- How do you implement validation in a setter method?
+- What is the difference between direct access and using getters/setters?
+```
+
+'''        
+
+'''
+program
+create a class which have account number and balance and the account number and balance can't be accessed through object
+but the data should be displayed
+'''
+# class bank:
+#     def __init__(self,a,b,c):
+#         self.__acc_num = a
+#         self.__pass = b
+#         self.__balance = c
+#     def display(self):
+#         print(f'the account number is :{self.__acc_num}')
+#         print(f'the password for this account number is : {self.__pass}')
+#         print(f'the balance for this account number is : {self.__balance}')
+# obj = bank(123,'pass123',5000)
+# obj.display()
+
+'''
+# 🧠 Data Abstraction (Abstract Class / ABC)
+
+## 📘 Theory
+
+**Data Abstraction** is an object-oriented programming concept that focuses on **hiding internal implementation details** and exposing only the essential functionality.
+
+In Python, abstraction is implemented using **abstract classes** from the `abc` module:
+- An **abstract class** defines methods that **must be implemented** by any subclass.
+- These methods are marked with the `@abstractmethod` decorator.
+- Abstract classes **cannot be instantiated directly**.
+- This enforces a **contract**: any subclass must implement the abstract methods.
+
+---
+
+## 🧪 Code Example
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass # it is a keyword in python which is used whenever we declare a block of code but want to leave it empty for future we use pass
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side * self.side
+
+    def perimeter(self):
+        return 4 * self.side
+
+# shape = Shape()         # ❌ Error: Can't instantiate abstract class
+square = Square(5)        # ✅ Valid
+print(square.area())      # Output: 25
+print(square.perimeter()) # Output: 20
+```
+
+## 🎯 Common Interview Questions
+- What is abstraction in Python and how is it implemented?
+- What is the role of `@abstractmethod`?
+- Can you instantiate an abstract class?
+- What happens if a subclass does not implement all abstract methods?
+- How is abstraction different from encapsulation?
+```
+'''
+
+'''
+# 🧠 Polymorphism in Python
+
+## 📘 Theory
+
+**Polymorphism** is an object-oriented programming concept where a **single method or function behaves differently based on the object**
+that calls it. The word "poly" means many, and "morph" means forms — so polymorphism means **many forms**.
+
+In Python, polymorphism allows:
+- The same method name to be used across different classes.
+- Each class to implement the method in its own way.
+- Code to be more flexible and reusable.
+
+🎯 Common Interview Questions
+What is polymorphism in Python?
+
+How does Python support polymorphism?
+
+What is the difference between method overloading and method overriding?
+
+Can you give an example of polymorphism using classes?
+
+How does polymorphism improve code flexibility and reusability?
+
+## 🧪 Code Example
+'''
+# class valorant:
+#     def character(self):
+#         print('called agents')
+
+# class bgmi:
+#     def character(self):
+#         print('called characters')
+
+# class eFootball:
+#     def character(self):
+#         print('called football-players')
+
+# g1 = valorant()
+# g2 = bgmi()
+# g3 = eFootball()
+# data = [g1,g2,g3]
+# for game in data:
+#     game.character()
+''' 
+# 🦆 Duck Typing in Python
+
+## 📘 Theory
+
+**Duck Typing** is a dynamic typing concept in Python where the **type of an object is determined by its behavior**, not its class.
+
+> "If it walks like a duck and quacks like a duck, it's treated like a duck."
+
+In Duck Typing:
+- You don’t check the type of an object.
+- You just call the method or access the attribute you expect it to have.
+- If the object supports it, it works — regardless of its class.
+
+This supports **polymorphism without inheritance**.
+
+---
+
+## 🧪 Code Example
+
+```python
+class Cat:
+    def make_sound(self):
+        print('meow')
+
+class Dog:
+    def make_sound(self):
+        print('bark')
+
+def call(animal):
+    animal.make_sound()
+
+call(Cat())  # Output: meow
+call(Dog())  # Output: bark
+```
+
+Here, both `Cat` and `Dog` have a `make_sound()` method. The `call()` 
+function works with any object that defines this method — no need for a common parent class.
+
+---
+
+## 🎯 Common Interview Questions
+- What is duck typing in Python?
+- How does duck typing differ from traditional polymorphism via inheritance?
+- Can you give an example of duck typing?
+- What are the advantages and risks of duck typing?
+```
+
+'''
+class cat:
+    def make_sound(s):
+        print('meow')
+
+class dog:
+    def make_sound(s):
+        print('bark')
+        
+def call(a):
+    a.make_sound()
+
+call(cat())
+call(dog())
