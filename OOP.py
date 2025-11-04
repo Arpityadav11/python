@@ -1395,4 +1395,35 @@ To make `print(obj1)` show meaningful output, override `__str__`:
 def __str__(self):
     return f"C1({self.a}, {self.b})"
 ```
+
+# 🔁 Method Overriding in Python
+
+## 📘 Theory
+
+**Method Overriding** is an object-oriented programming concept where a **child class provides a specific implementation** of a method 
+that is already defined in its **parent class**.
+
+- The method name, number of parameters, and signature remain the **same**.
+- The child class **replaces** the parent class's version of the method.
+- It enables **runtime polymorphism** — the method that gets called depends on the object type.
+
+---
+
+## 🧪 Code Example
+
+```python
+class Game:
+    def start(self):
+        print("Starting a generic game...")
+
+class Valorant(Game):
+    def start(self):  # Overriding the parent method
+        print("Launching Valorant!")
+
+g1 = Game()
+g2 = Valorant()
+
+g1.start()  # Output: Starting a generic game...
+g2.start()  # Output: Launching Valorant!
+
 '''
