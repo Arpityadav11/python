@@ -1,0 +1,76 @@
+✅ Git vs GitHub — Placement-Ready Definitions
+
+🔹 Git
+> Git is a **distributed version control system (VCS)** used to track changes in source code during software development.  
+It allows multiple developers to collaborate, manage versions, and maintain history of code changes efficiently.
+
+**Key Features:**
+- Local and remote repositories
+- Branching and merging
+- Commit history and rollback
+- Conflict resolution
+
+🔹 GitHub
+> GitHub is a **cloud-based platform** that hosts Git repositories and provides collaboration tools for developers.  
+It enables code sharing, version control, and team workflows through features like pull requests, issues, and GitHub Actions.
+
+**Key Services:**
+- Remote repository hosting
+- Pull requests and code reviews
+- Issue tracking and project boards
+- CI/CD with GitHub Actions
+
+---# 🧠 Git Command Reference — Placement Notes
+
+## 🔹 Basic Setup
+| Command | Description |
+|--------|-------------|
+| `git clone` | Clone a repository into a new directory |
+| `git init` | Create an empty Git repository or reinitialize an existing one |
+
+---
+
+## 🔹 Working on Current Changes
+| Command | Description |
+|--------|-------------|
+| `git add` | Add file contents to the staging area (index) |
+| `git mv` | Move or rename a file, directory, or symlink |
+| `git restore` | Restore working tree files to a previous state |
+| `git rm` | Remove files from the working tree and index |
+
+---
+
+## 🔹 Examine History and State
+| Command | Description |
+|--------|-------------|
+| `git bisect` | Use binary search to find the commit that introduced a bug |
+| `git diff` | Show changes between commits or working tree |
+| `git grep` | Search for lines matching a pattern |
+| `git log` | Show commit history |
+| `git show` | Display various types of Git objects |
+| `git status` | Show the current working tree status |
+
+---
+
+## 🔹 Grow, Mark, and Tweak History
+| Command | Description |
+|--------|-------------|
+| `git backfill` | Download missing objects in a partial clone |
+| `git branch` | List, create, or delete branches |
+| `git commit` | Record changes to the repository |
+| `git merge` | Join two or more development histories |
+| `git rebase` | Reapply commits on top of another base tip |
+| `git reset` | Reset current HEAD to a specified state |
+| `git switch` | Switch between branches |
+| `git tag` | Create, list, delete, or verify tags (GPG support) |
+
+---
+
+## 🔹 Collaborate with Others
+| Command | Description |
+|--------|-------------|
+| `git fetch` | Download objects and refs from another repository |
+| `git pull` | Fetch and integrate changes from another repo or branch |
+| `git push` | Upload local commits to a remote repository |
+
+---
