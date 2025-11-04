@@ -897,7 +897,61 @@ mthd - sell , buy, update, display product list
 #     def __init__(self):
 #         print('i am c2 constructor ')
 #         super().__init__() # this is calling the constructor of parent class
+ 
+'''
+Multilevel inheritance
+'''
+# class c1:
+#     data=90
+#     def m1(self):
+#         print('i am method from c1')
+# class c2(c1): # object of this class will have the methods and attributes of c1 and c2 class
+#     def m1(self):
+#         print('i am m1')         
+# class c3(c2): # object of this class will have the methods and attributes of c1,c2 and c3 class
+#     def m1(self):
+#         print('i am method from c3')
+#         super.m1() # calling the m1 from c2
+#         c1.m1(self) # calling the m1 from c1
         
+'''multiple inheritance'''
+'downward'
+# class m1:
+#     def __init__(self):
+#         self.score = '13-9'
+#         print('r1 won',self.score)
+# class m2:
+#     def __init__(self):
+#         self.score = '10-13'
+#         print('r2 lost',self.score)
+        
+# class m3(m1,m2): # the super class will be assigned according to the squence of classes
+#     def __init__(self):
+#         print('showing results')
+#         super().__init__()
+#         m2.__init__(self)
+        
+# obj=m3()
+
+'upward'
+# class m3: 
+#     def __init__(self):
+#         print('showing results')
+        
+# class m1(m3):
+#     def __init__(self):
+#         super().__init__()
+#         self.score = '13-9'
+#         print('r1 won',self.score)
+        
+# class m2(m3):
+#     def __init__(self):
+#         super().__init__()
+#         self.score = '10-13'
+#         print('r2 lost',self.score)
+
+# obj=m1()
+
 '''
 # 🧠 Encapsulation in Python
 
@@ -1180,7 +1234,7 @@ How does polymorphism improve code flexibility and reusability?
 > "If it walks like a duck and quacks like a duck, it's treated like a duck."
 
 In Duck Typing:
-- You don’t check the type of an object.
+- You don't check the type of an object.
 - You just call the method or access the attribute you expect it to have.
 - If the object supports it, it works — regardless of its class.
 
@@ -1218,17 +1272,127 @@ function works with any object that defines this method — no need for a common
 - What are the advantages and risks of duck typing?
 ```
 
+# 🔁 Method Overloading in Python
+
+## 📘 Theory
+
+**Method Overloading** allows multiple methods with the **same name but different parameters**. In languages like Java or C++,
+this is done by changing:
+- Number of parameters
+- Type of parameters
+- Order of parameters
+
+### ❗ In Python:
+- **Direct method overloading is not supported**.
+- Python uses **dynamic typing** and **default arguments** to simulate overloading.
+- You can define a method with default values and use conditional logic to handle different argument combinations.
+
+---
+
+## 🧪 Code Example
+
+```python
+class C2:
+    def m1(self, a=0, b=0, c=0):
+        if a != 0 and b == 0 and c == 0:
+            print('one argument')
+        elif a != 0 and b != 0 and c == 0:
+            print('two arguments')
+        elif a != 0 and b != 0 and c != 0:
+            print('three arguments')
+        else:
+            print('no arguments')
+
+obj = C2()
+obj.m1()             # Output: no arguments
+obj.m1(10)           # Output: one argument
+obj.m1(10, 20)       # Output: two arguments
+obj.m1(10, 20, 30)   # Output: three arguments
+```
+
+---
+
+## 🎯 Common Interview Questions
+- Does Python support method overloading?
+- How can you simulate method overloading in Python?
+- What are default arguments and how do they help in overloading?
+- What happens if you define two methods with the same name in a Python class?
+
+---
+
+## 🧠 Bonus Tip
+If you define multiple methods with the same name in a Python class, **only the last one is retained** — earlier ones are overridden.
 '''
-class cat:
-    def make_sound(s):
-        print('meow')
 
-class dog:
-    def make_sound(s):
-        print('bark')
-        
-def call(a):
-    a.make_sound()
+'''
+# 🔁 Operator Overloading in Python
 
-call(cat())
-call(dog())
+## 📘 Theory
+
+**Operator Overloading** allows you to redefine how built-in operators (`+`, `*`, `/`, `**`, etc.) behave for **custom objects**.
+
+- Python uses **special methods** (also called **magic methods**) like:
+  - `__add__` → for `+`
+  - `__mul__` → for `*`
+  - `__divmod__` → for `divmod()` or `/`
+  - `__pow__` → for `**`
+- These methods let you define custom behavior when operators are used on instances of your class.
+
+> ⚠️ This is **not method overriding**, which refers to redefining a method from a parent class in a child class.
+
+---
+
+## 🧪 Code Example
+
+```python
+class C1:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add(self, other):
+        n1 = self.a + other.a
+        n2 = self.b + other.b
+        return n1, n2
+
+    def __mul__(self, other):  # Overloads '*'
+        n1 = self.a * other.a
+        n2 = self.b * other.b
+        return n1, n2
+
+    def __divmod__(self, other):  # Overloads '/'
+        n1 = self.a / other.a
+        n2 = self.b / other.b
+        return n1, n2
+
+    def __pow__(self, other):  # Overloads '**'
+        n1 = self.a ** other.a
+        n2 = self.b ** other.b
+        return n1, n2
+
+obj1 = C1(10, 15)
+obj2 = C1(2, 2)
+
+print(obj1 * obj2)     # Output: (20, 30)
+print(divmod(obj1, obj2))  # Output: (5.0, 7.5)
+print(obj1 ** obj2)    # Output: (100, 225)
+```
+
+---
+
+## 🎯 Common Interview Questions
+- What is operator overloading in Python?
+- What are magic methods like `__add__`, `__mul__`, `__pow__`?
+- How is operator overloading different from method overriding?
+- Can you overload multiple operators in a single class?
+
+---
+
+## 🧠 Bonus Tip
+To make `print(obj1)` show meaningful output, override `__str__`:
+
+```python
+def __str__(self):
+    return f"C1({self.a}, {self.b})"
+```
+'''
