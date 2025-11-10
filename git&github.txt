@@ -1,76 +1,113 @@
-✅ Git vs GitHub — Placement-Ready Definitions
+# ✅ Git vs GitHub — Placement-Ready Definitions
 
-🔹 Git
-> Git is a **distributed version control system (VCS)** used to track changes in source code during software development.  
-It allows multiple developers to collaborate, manage versions, and maintain history of code changes efficiently.
+## 🔹 Git
+> Git is a **distributed version control system (VCS)** used to track changes in source code during development.  
+It enables multiple developers to collaborate, manage versions, and maintain a history of code changes efficiently.
 
-**Key Features:**
+### 🔑 Key Features
 - Local and remote repositories
 - Branching and merging
 - Commit history and rollback
 - Conflict resolution
 
-🔹 GitHub
-> GitHub is a **cloud-based platform** that hosts Git repositories and provides collaboration tools for developers.  
-It enables code sharing, version control, and team workflows through features like pull requests, issues, and GitHub Actions.
+---
 
-**Key Services:**
+## 🔹 GitHub
+> GitHub is a **cloud-based platform** that hosts Git repositories and provides collaboration tools for developers.  
+It supports code sharing, version control, and team workflows through features like pull requests, issues, and GitHub Actions.
+
+### 🔧 Key Services
 - Remote repository hosting
 - Pull requests and code reviews
 - Issue tracking and project boards
 - CI/CD with GitHub Actions
 
----# 🧠 Git Command Reference — Placement Notes
+---
+
+# 🧠 Git Command Reference — Placement Notes
 
 ## 🔹 Basic Setup
-| Command | Description |
-|--------|-------------|
-| `git clone` | Clone a repository into a new directory |
-| `git init` | Create an empty Git repository or reinitialize an existing one |
+| Command       | Description                                 |
+|---------------|---------------------------------------------|
+| `git clone`   | Clone a repository into a new directory     |
+| `git init`    | Initialize a new Git repository             |
 
 ---
 
 ## 🔹 Working on Current Changes
-| Command | Description |
-|--------|-------------|
-| `git add` | Add file contents to the staging area (index) |
-| `git mv` | Move or rename a file, directory, or symlink |
-| `git restore` | Restore working tree files to a previous state |
-| `git rm` | Remove files from the working tree and index |
+| Command         | Description                                           |
+|-----------------|-------------------------------------------------------|
+| `git add`       | Stage file changes for commit                         |
+| `git mv`        | Move or rename a file or directory                    |
+| `git restore`   | Restore files to a previous state                     |
+| `git rm`        | Remove files from working tree and staging area      |
 
 ---
 
 ## 🔹 Examine History and State
-| Command | Description |
-|--------|-------------|
-| `git bisect` | Use binary search to find the commit that introduced a bug |
-| `git diff` | Show changes between commits or working tree |
-| `git grep` | Search for lines matching a pattern |
-| `git log` | Show commit history |
-| `git show` | Display various types of Git objects |
-| `git status` | Show the current working tree status |
+| Command         | Description                                           |
+|-----------------|-------------------------------------------------------|
+| `git bisect`    | Find the commit that introduced a bug (binary search) |
+| `git diff`      | Show changes between commits or working tree          |
+| `git grep`      | Search for lines matching a pattern                   |
+| `git log`       | Show commit history                                   |
+| `git show`      | Display Git objects (commits, tags, etc.)            |
+| `git status`    | Show current working tree status                      |
 
 ---
 
 ## 🔹 Grow, Mark, and Tweak History
-| Command | Description |
-|--------|-------------|
-| `git backfill` | Download missing objects in a partial clone |
-| `git branch` | List, create, or delete branches |
-| `git commit` | Record changes to the repository |
-| `git merge` | Join two or more development histories |
-| `git rebase` | Reapply commits on top of another base tip |
-| `git reset` | Reset current HEAD to a specified state |
-| `git switch` | Switch between branches |
-| `git tag` | Create, list, delete, or verify tags (GPG support) |
+| Command         | Description                                           |
+|-----------------|-------------------------------------------------------|
+| `git backfill`  | Download missing objects in a partial clone           |
+| `git branch`    | List, create, or delete branches                      |
+| `git commit`    | Record staged changes with a message                  |
+| `git merge`     | Merge branches                                        |
+| `git rebase`    | Reapply commits on top of another base tip            |
+| `git reset`     | Reset HEAD to a previous state                        |
+| `git switch`    | Switch between branches                               |
+| `git tag`       | Create or manage tags (supports GPG verification)     |
 
 ---
 
 ## 🔹 Collaborate with Others
-| Command | Description |
-|--------|-------------|
-| `git fetch` | Download objects and refs from another repository |
-| `git pull` | Fetch and integrate changes from another repo or branch |
-| `git push` | Upload local commits to a remote repository |
+| Command         | Description                                           |
+|-----------------|-------------------------------------------------------|
+| `git fetch`     | Download changes from remote repository               |
+| `git pull`      | Fetch and merge changes from remote                   |
+| `git push`      | Upload local commits to remote repository             |
 
 ---
+
+# 📁 Git Folder & File Utilities
+
+- `git init` → Initializes Git in the current folder.
+- `git add filename` → Stages a file for commit.
+- `git add .` → Stages all files in the current directory.
+- `git status` → Shows status of staged and unstaged files.
+- `git rm --cached <file>` → Unstages a file (undo `git add`).
+- `git commit -m "message"` → Commits staged changes with a message.
+- `git log` → Shows full commit history.
+- `git log --oneline` → Shows compact commit history.
+
+---
+
+## 🧾 Special Git Files
+
+- `.gitignore` → Lists files/folders to exclude from tracking.
+- `.gitkeep` → Placeholder file to push empty folders (must be inside the folder).
+
+---
+
+## 🖥️ Git Directory Navigation
+
+- Use `cd D:\f1\f2` to navigate to your Git folder in terminal.
+- Use **Git Graph extension** in VS Code to visualize commit history.
+
+---
+
+## 🎯 Interview Tips
+- Git is the tool, GitHub is the platform.
+- Git works offline; GitHub is online.
+- Know the difference between `git pull` and `git fetch`.
+- Understand staging vs committing vs pushing.
