@@ -89,7 +89,9 @@ It supports code sharing, version control, and team workflows through features l
 - `git commit -m "message"` → Commits staged changes with a message.
 - `git log` → Shows full commit history.
 - `git log --oneline` → Shows compact commit history.
-
+- `git branch branchname` -> to add new branch 
+- `git switch branchname` -> to switch the branch
+- ``
 ---
 
 ## 🧾 Special Git Files
