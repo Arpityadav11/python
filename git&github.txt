@@ -81,17 +81,36 @@ It supports code sharing, version control, and team workflows through features l
 
 # 📁 Git Folder & File Utilities
 
-- `git init` → Initializes Git in the current folder.
-- `git add filename` → Stages a file for commit.
-- `git add .` → Stages all files in the current directory.
-- `git status` → Shows status of staged and unstaged files.
-- `git rm --cached <file>` → Unstages a file (undo `git add`).
-- `git commit -m "message"` → Commits staged changes with a message.
-- `git log` → Shows full commit history.
-- `git log --oneline` → Shows compact commit history.
-- `git branch branchname` -> to add new branch 
-- `git switch branchname` -> to switch the branch
-- ``
+## 🧠 Essential Git Commands Cheat Sheet
+
+### 🔧 Initialization & Staging
+- **`git init`** → Initializes a Git repository in the current folder.
+- **`git add filename`** → Stages a specific file for commit.
+- **`git add .`** → Stages all changes in the current directory.
+- **`git status`** → Shows the status of staged and unstaged files.
+- **`git rm --cached <file>`** → Unstages a file (undoes `git add`).
+
+### 📦 Committing & History
+- **`git commit -m "message"`** → Commits staged changes with a message.
+- **`git log`** → Displays full commit history.
+- **`git log --oneline`** → Shows a compact, one-line-per-commit history.
+
+### 🌿 Branching
+- **`git branch branchname`** → Creates a new branch.
+- **`git switch branchname`** → Switches to the specified branch (modern syntax).
+- **`git checkout branchname`** → Also switches branches (older syntax, still valid).
+
+### 🧳 Stashing
+- **`git stash`** → Temporarily saves changes not yet committed.
+- **`git stash save "your message"`** → Saves stash with a custom message (legacy syntax).
+- **`git stash list`** → Lists all stashed changes.
+- **`git stash pop`** → Applies the most recent stash and removes it from the stash list.
+- **`git stash drop`** → Deletes a stash entry.
+
+### 🔀 Merging & Resetting
+- **`git merge branchname`** → Merges the specified branch into the current branch.
+- **`git reset --hard <commit-id>`** → Moves `HEAD` and resets the working directory to a specific commit (e.g., `e00cdc`).
+
 ---
 
 ## 🧾 Special Git Files
@@ -113,3 +132,4 @@ It supports code sharing, version control, and team workflows through features l
 - Git works offline; GitHub is online.
 - Know the difference between `git pull` and `git fetch`.
 - Understand staging vs committing vs pushing.
+
