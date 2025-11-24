@@ -294,3 +294,20 @@ Returns the current position of the file pointer (in bytes).
 # f.close()
 
 ''' in the exception handling the finally block is used for the program which you want to execute always'''
+
+'count the number of occurence in string'
+# S = 'aabbccdddeeee'
+# occur = {}
+# for i in S:
+#   occur[i] = occur.get(i,0) +1
+# print(occur)
+
+'fabonacci series'
+num = int(input('enter the number till which you want the series'))
+a=0
+b=1
+for i in range(num):
+  c=a
+  print(c,end=' ')
+  a=b
+  b=a+c

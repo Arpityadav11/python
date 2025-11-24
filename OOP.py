@@ -139,7 +139,7 @@ Static variables are used when a value needs to be **consistent across all objec
 ---
 
 🔹 Characteristics:
-- Stored in the class namespace, not in the object’s instance dictionary.
+- Stored in the class namespace, not in the object's instance dictionary.
 - Accessible via both `ClassName.variable` and `object.variable`.
 - Changing the value via the class affects all objects.
 - Changing via an object creates a new instance variable (unless explicitly referencing the class).
@@ -241,7 +241,8 @@ class Solution:
 
 🔹 Definition:
 Instance variables are variables whose values are **unique to each object**.  
-They are used to store object-specific data and are defined using `self` inside methods (typically in `__init__` or other instance methods).
+They are used to store object-specific data 
+and are defined using `self` inside methods (typically in `__init__` or other instance methods).
 
 ---
 
@@ -279,7 +280,7 @@ obj2.display()   # Output: 20 50
 
 🔹 Definition:
 `self` is a reference to the **current instance of the class**.  
-It allows access to the instance’s attributes and methods from within the class.
+It allows access to the instance's attributes and methods from within the class.
 
 🧠 Think of `self` as a way for the object to refer to itself.
 
@@ -325,8 +326,6 @@ Here:
 '''
 
 '''
-Here’s a clean and complete theory + code note on **Constructors (`__init__`) in Python OOP**, formatted for easy copy-paste and understanding:
-
 ```python
                         *** Constructors in Python OOP ***
 
@@ -692,7 +691,8 @@ class D(B, C):  # Multiple inheritance
 # 🧠 `super()` Class in Python
 
 ## 📘 Theory
-The `super()` class in Python is used to refer to the **parent class** from within a **child class**, especially when dealing with **inheritance**. 
+The `super()` class in Python is used to refer to the **parent class** from within a **child class**,
+especially when dealing with **inheritance**. 
 It allows you to call methods (including constructors) from the parent class without explicitly naming it.
 
 This is particularly useful when:
@@ -1135,7 +1135,8 @@ but the data should be displayed
 
 ## 📘 Theory
 
-**Data Abstraction** is an object-oriented programming concept that focuses on **hiding internal implementation details** and exposing only the essential functionality.
+**Data Abstraction** is an object-oriented programming concept that focuses on **hiding internal implementation details** 
+and exposing only the essential functionality.
 
 In Python, abstraction is implemented using **abstract classes** from the `abc` module:
 - An **abstract class** defines methods that **must be implemented** by any subclass.
@@ -1427,3 +1428,6 @@ g1.start()  # Output: Starting a generic game...
 g2.start()  # Output: Launching Valorant!
 
 '''
+
+data = [1,2,3,4]
+print(data)
