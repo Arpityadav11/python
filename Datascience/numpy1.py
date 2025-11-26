@@ -976,8 +976,22 @@
 
 # ---
 # '''
-# import numpy as np
-# data = np.array([1,2,3,4,5,6])
-# print(data)
-data = [1,2,3,4]
-print(data)
+import csv
+import numpy as np
+# nd = np.genfromtxt('file1.csv',delimiter=',',dtype=str)
+# print(nd)
+import matplotlib.pyplot as plt
+import seaborn as sns
+# n1 = [1,2,3,4,5,4,3,2,1,10,12,234,5]
+# plt.plot(n1)
+# plt.show()
+student = {
+    'name':['arpit','jay','janvi','harshita','Arpita','Om','Mayur','Sanjana'],
+    'marks':[92,50,75,95,56,49,60,50],
+    'gender':['M','M','F','F','F','M','M','F']
+}
+x = student['name']
+y = student['marks']
+colors = student['gender']
+sns.barplot(x=x,y=y,hue=colors,palette='Set2')
+plt.show()
