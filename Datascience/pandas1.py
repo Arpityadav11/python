@@ -28,3 +28,26 @@ using indexing , fancy indexing, slicing,boolean indexing
 '''how to load the CSV file into your panda'''
 import pandas as pd 
 # data = pd.read_csv('filename.csv')
+
+# function to give the sum of two numbers
+def addition(m,n):
+    print(f'the addition of numbers is {m+n}')
+
+# function to give the substraction of two numbers
+def substraction(m,n):
+    print(f'the substraction of numbers is {m-n}')
+
+# function of multiplication 
+def multiplication(m,n):
+    print(f'the multiplication of numbers is {m*n}')
+
+# function of division
+def division(m,n):
+    print(f'the division of numbers is {m//n}')
+    
+a = 10
+b = 5
+addition(a,b)
+substraction(a,b)
+multiplication(a,b)
+division(a,b)
